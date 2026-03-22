@@ -16,7 +16,7 @@ namespace WebAppAdvance
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => 
+            builder.Services.AddDefaultIdentity<AppUser>(options => 
             { 
                 options.SignIn.RequireConfirmedAccount = false;
                 options.Password.RequireNonAlphanumeric = false;
@@ -27,7 +27,7 @@ namespace WebAppAdvance
                 options.Password.RequireDigit = false;
             
             })
-                .AddRoles<IdentityRole>()
+                .AddRoles<AppRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
 
