@@ -49,6 +49,7 @@ namespace WebAppAdvance
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.MapStaticAssets();
             app.MapControllerRoute(

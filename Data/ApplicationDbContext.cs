@@ -3,7 +3,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace WebAppAdvance.Data
 {
-    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext(options)
+    public class ApplicationDbContext:IdentityDbContext<AppUser,AppRole,string>
+        
     {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext>options)
+        :base(options) { }
+            
+        
     }
 }
