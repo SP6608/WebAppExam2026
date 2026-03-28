@@ -168,15 +168,15 @@ namespace WebAppAdvance.Migrations
                             ConcurrencyStamp = "11111111-1111-1111-1111-111111111111",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR",
-                            OnCreate = new DateTime(2026, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            OnCreate = new DateTime(2026, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = "a8cd3219-0e9c-4456-9646-e9ec31f42ac9",
                             ConcurrencyStamp = "22222222-2222-2222-2222-222222222222",
-                            Name = "Employee",
-                            NormalizedName = "EMPLOYEE",
-                            OnCreate = new DateTime(2026, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Name = "User",
+                            NormalizedName = "USER",
+                            OnCreate = new DateTime(2026, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
