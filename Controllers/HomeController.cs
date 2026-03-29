@@ -22,7 +22,7 @@ namespace WebAppAdvance.Controllers
                 .AsNoTracking()
                 .Select(m => new CarsIndexViewModel()
                 {
-                    
+                    Id = m.Id,
                     Brand = m.Brand,
                     Model = m.Model,
                     Year = m.Year,
