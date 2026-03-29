@@ -1,20 +1,38 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using WebAppAdvance.Data;
 using WebAppAdvance.Models;
+using WebAppAdvance.ModelsView;
 
 namespace WebAppAdvance.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly ApplicationDbContext dbcontext;
+        public HomeController(ApplicationDbContext dbcontext)
         {
-            return View();
+            this.dbcontext = dbcontext;
+        }
+        [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            var model = await dbcontext
+                .Cars
+                .AsNoTracking()
+                .Select(m => new CarsIndexViewModel()
+                {
+                    
+                    Brand = m.Brand,
+                    Model = m.Model,
+                    Year = m.Year,
+                    Pasengers = m.Pasengers,
+                    PricePerDay = m.PricePerDay
+                }).ToListAsync();
+            return View(model);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+       
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

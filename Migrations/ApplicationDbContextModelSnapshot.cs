@@ -253,6 +253,220 @@ namespace WebAppAdvance.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("WebAppAdvance.Models.Car", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Model")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("Pasengers")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("PricePerDay")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cars");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Brand = "BMW",
+                            Model = "X5",
+                            Pasengers = 5,
+                            PricePerDay = 150m,
+                            Year = 2022
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Brand = "Audi",
+                            Model = "A6",
+                            Pasengers = 5,
+                            PricePerDay = 130m,
+                            Year = 2021
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Brand = "Mercedes",
+                            Model = "C220",
+                            Pasengers = 5,
+                            PricePerDay = 140m,
+                            Year = 2020
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Brand = "Toyota",
+                            Model = "Corolla",
+                            Pasengers = 5,
+                            PricePerDay = 70m,
+                            Year = 2019
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Brand = "Volkswagen",
+                            Model = "Golf",
+                            Pasengers = 5,
+                            PricePerDay = 65m,
+                            Year = 2018
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Brand = "Ford",
+                            Model = "Focus",
+                            Pasengers = 5,
+                            PricePerDay = 60m,
+                            Year = 2017
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Brand = "Honda",
+                            Model = "Civic",
+                            Pasengers = 5,
+                            PricePerDay = 85m,
+                            Year = 2021
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Brand = "Hyundai",
+                            Model = "Tucson",
+                            Pasengers = 5,
+                            PricePerDay = 110m,
+                            Year = 2022
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Brand = "Kia",
+                            Model = "Sportage",
+                            Pasengers = 5,
+                            PricePerDay = 115m,
+                            Year = 2023
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Brand = "Nissan",
+                            Model = "Qashqai",
+                            Pasengers = 5,
+                            PricePerDay = 95m,
+                            Year = 2020
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Brand = "Peugeot",
+                            Model = "3008",
+                            Pasengers = 5,
+                            PricePerDay = 100m,
+                            Year = 2021
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Brand = "Renault",
+                            Model = "Megane",
+                            Pasengers = 5,
+                            PricePerDay = 75m,
+                            Year = 2019
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Brand = "Skoda",
+                            Model = "Octavia",
+                            Pasengers = 5,
+                            PricePerDay = 90m,
+                            Year = 2022
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Brand = "Mazda",
+                            Model = "CX-5",
+                            Pasengers = 5,
+                            PricePerDay = 120m,
+                            Year = 2021
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Brand = "Subaru",
+                            Model = "Forester",
+                            Pasengers = 5,
+                            PricePerDay = 110m,
+                            Year = 2020
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Brand = "Chevrolet",
+                            Model = "Malibu",
+                            Pasengers = 5,
+                            PricePerDay = 80m,
+                            Year = 2018
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Brand = "Dacia",
+                            Model = "Duster",
+                            Pasengers = 5,
+                            PricePerDay = 70m,
+                            Year = 2022
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Brand = "Volvo",
+                            Model = "XC60",
+                            Pasengers = 5,
+                            PricePerDay = 160m,
+                            Year = 2023
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Brand = "Tesla",
+                            Model = "Model 3",
+                            Pasengers = 5,
+                            PricePerDay = 180m,
+                            Year = 2023
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Brand = "Opel",
+                            Model = "Insignia",
+                            Pasengers = 5,
+                            PricePerDay = 85m,
+                            Year = 2019
+                        });
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("WebAppAdvance.Data.AppRole", null)

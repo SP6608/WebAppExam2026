@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using WebAppAdvance.Models;
 
 namespace WebAppAdvance.Data
 {
@@ -13,6 +14,6 @@ namespace WebAppAdvance.Data
             base.OnModelCreating(builder);
             builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         }
-        
+        public virtual DbSet<Car> Cars { get; set; } = null!;
     }
 }
